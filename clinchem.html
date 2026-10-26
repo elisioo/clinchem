@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Clinical Chemistry 1 · Study Buddy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7fa;--cd:#fff;--pk:#ffe0ec;--ac:#c2457a;--ink:#4a3640;--mu:#8a7380;--ok:#2f8a5c;--no:#d6455d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#241a20;--cd:#2f2229;--pk:#4a2c3b;--ac:#ff8fb7;--ink:#f6e8ee;--mu:#c4a9b6;--ok:#6fd1a0;--no:#ff8095}}
+:root[data-theme=dark]{--bg:#241a20;--cd:#2f2229;--pk:#4a2c3b;--ac:#ff8fb7;--ink:#f6e8ee;--mu:#c4a9b6;--ok:#6fd1a0;--no:#ff8095}
+html{color-scheme:light dark}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Nunito,system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 14px 6px;border-bottom:1px solid var(--pk);max-width:760px;margin:auto}
+h1,h2{font-family:Fredoka,Nunito,sans-serif;margin:0;color:var(--ac)}h1{font-size:20px}h2{font-size:26px;margin:4px 0 6px}
+.pb{height:10px;background:var(--pk);border-radius:9px;overflow:hidden;margin:6px 0}#bar{height:100%;width:0;background:var(--ac);border-radius:9px;transition:width .4s}
+#pc{font-size:13px;color:var(--mu)}
+#nav{display:flex;gap:6px;overflow-x:auto;padding:4px 0}
+#nav button{flex:none;width:38px;height:38px;border-radius:50%;border:2px solid var(--pk);background:var(--cd);font-size:18px;cursor:pointer;position:relative}
+#nav .on{border-color:var(--ac);background:var(--pk)}#nav .dn::after{content:"✓";position:absolute;right:-3px;top:-5px;font-size:11px;color:#fff;background:var(--ok);border-radius:50%;width:15px;height:15px;line-height:15px}
+main{max-width:760px;margin:auto;padding:12px 14px 40px}
+.st{color:var(--mu);font-size:14px;margin:0}.hint{color:var(--mu);margin:0 0 10px}
+button.p,.row button{font:600 16px Nunito,sans-serif;background:var(--ac);color:#fff;border:0;border-radius:22px;padding:10px 18px;cursor:pointer}
+:root[data-theme=dark] .row button,:root:not([data-theme=light]) .row button{color:#2a1420}
+.row button.sm,button.sm{background:var(--pk);color:var(--ac);font:600 14px Nunito,sans-serif;border:0;border-radius:18px;padding:7px 14px;cursor:pointer;margin-bottom:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cd{background:var(--cd);border:2px solid var(--pk);border-radius:18px;padding:12px 16px;margin-bottom:10px;cursor:pointer}
+.cd b{font-family:Fredoka,Nunito,sans-serif;font-weight:500;font-size:18px}.cd b::before{content:"🌸 "}
+.cd p{display:none;margin:6px 0 0;padding-top:6px;border-top:1px dashed var(--pk)}
+.cd.open{border-color:var(--ac)}.cd.open p{display:block}.cd.open b::before{content:"💗 "}
+.q{background:var(--cd);border:2px solid var(--pk);border-radius:18px;padding:16px;margin:10px 0}
+.o{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;border-radius:14px;border:2px solid var(--pk);background:var(--bg);color:var(--ink);font:600 16px Nunito,sans-serif;cursor:pointer}
+.o.ok{border-color:var(--ok);background:var(--pk)}.o.no{border-color:var(--no)}
+.vz{background:var(--cd);border:2px solid var(--pk);border-radius:18px;padding:14px;margin:8px 0 14px}
+.vz h3{margin:0 0 8px;font:500 17px Fredoka,sans-serif;color:var(--ac)}.vz p{margin:6px 0;font-size:15px}
+.vz input[type=range]{width:100%;accent-color:var(--ac)}
+.vz input[type=number],.vz select{font:600 16px Nunito,sans-serif;padding:6px 10px;border:2px solid var(--pk);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+.fl{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}.fl span{background:var(--pk);border-radius:14px;padding:4px 10px;font-weight:600}
+.big{font:500 26px Fredoka,sans-serif;color:var(--ac)}.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bm{height:22px;background:var(--pk);border-radius:12px;overflow:hidden}.bm div{height:100%;background:var(--ac);transition:width .2s}
+.gel{position:relative;height:56px;background:var(--pk);border-radius:12px;margin:8px 0}
+.gel i{position:absolute;top:8px;width:15%;height:40px;border-radius:8px;background:var(--ac);opacity:.85;font-style:normal;color:#fff;font-size:12px;text-align:center;line-height:40px}
+.ax{display:flex;justify-content:space-between;font-size:13px;color:var(--mu);font-weight:700}
+.bi{background:var(--pk);border-radius:18px;padding:12px 16px;margin:8px 0 14px}.bi b{color:var(--ac);font-family:Fredoka,sans-serif;font-weight:500}.bi p{margin:5px 0;font-size:15px}
+.wy{background:var(--pk);border-radius:14px;padding:10px 14px;margin:10px 0;font-size:15px}
+#tu{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:14px 14px calc(14px + env(safe-area-inset-bottom,0px));background:var(--cd);border-top:3px solid var(--ac);box-shadow:0 -6px 20px rgba(0,0,0,.25)}#tu .row{margin-top:10px}
+#nav sup{position:absolute;left:-3px;top:-6px;font-size:11px}.tl{color:var(--no)}
+</style></head><body>
+<header><h1>🎀 Clinical Chemistry 1 · First Exam</h1><div class="pb"><div id="bar"></div></div><div id="pc"></div><div id="nav"></div></header>
+<main id="main"></main><div id="tu"></div>
+<script>
+const M=[
+{e:"🧴",t:"Reagents & Water",d:`Reagent kits::Usually pre-packaged (reagents + containers); may only need water or buffer added
+Analytic Reagent Grade::Highest purity; used for most analytical procedures
+Ultrapure (HPLC, Spectrograde, Nanograde)::For chromatography, atomic absorption, immunoassays, molecular diagnostics
+Chemically Pure::Impurity limits not stated; not for research unless purified or a reagent blank is run
+USP / NF grade::Used to manufacture drugs; purity may not meet assay needs
+Technical / Commercial grade::Industrial use only; never in the clinical lab
+Reagent water::Most frequently used reagent; tap water is unsuitable
+Distilled / Deionized / RO water::Purified by distillation / ion exchange / reverse osmosis (pumped across a semipermeable membrane). Also ultrafiltration, UV, sterilization, ozone
+Type I water::Purest; recommended for standardization techniques
+Type II water::Acceptable for most procedures, including reagent preparation
+Type III water::Some qualitative tests only; NOT routine analyses or reagent prep. It is the source water for Type I and II and for washing glassware
+NIST::Developed certified/standard reference materials (CRMs/SRMs) with values assigned by state-of-the-art methods
+Primary standard::Highly purified chemical measured directly to make a solution of exact known concentration and purity
+Secondary standard::Lower purity; concentration determined by comparison with a primary standard
+Solute / Solvent::Solute = substance dissolved (biologic solutes = analytes). Solvent = liquid it is dissolved in`},
+{e:"🥼",t:"Glassware & Pipettes",d:`Borosilicate (Pyrex, Kimax)::All-purpose; tolerates heating and long sterilization. Limits: may cloud with strong alkali; scratches
+Aluminosilicate::6× stronger than borosilicate; hard, optically pure, scratch-resistant. Limit: some acid/alkali attack
+Soft (boron-free) glass::Usable with strong acids and alkali. Limit: low thermal resistance
+Flint / Soda lime glass::Most expensive; fair chemical resistance. Limit: releases alkali, causing errors in some determinations
+Low actinic glass::Reduces light transmission; holds photosensitive substances (e.g., bilirubin)
+TC vs TD::Volumetric glassware is made either To Contain (TC) or To Deliver (TD), with set tolerances
+Volumetric flask::Contains a specific volume (TC)
+Graduated cylinder::Measures volume when high accuracy is not essential
+Graduated / Measuring pipettes::Deliver the liquid between two calibration marks; larger tolerances than volumetric pipettes
+Serologic pipette::Marks run to the tip; blow-out type (etched ring near the mouth)
+Mohr pipette::Calibrated between two marks; no graduations to the tip; self-draining
+Micropipette::Disposable; 1–1000 µL (1 mL); single calibration mark
+Volumetric pipette::Greatest accuracy and precision; TD, self-draining; cylindrical bulb midway; one volume only
+Ostwald-Folin pipette::For fluids more viscous than water (body fluids); oval bulb near tip; blow-out
+Pasteur pipette::No calibration mark; transfers only; not for quantitative work`},
+{e:"🌀",t:"Centrifuges",d:`Horizontal / Swinging bucket::Tubes swing horizontal while spinning, vertical at rest; speeds up to 300 rpm (per reviewer)
+Fixed-angle / Angle-head::Angled compartments so small particles sediment faster; higher speeds with much less heat build-up
+Ultracentrifuge::Separates layers of different specific gravity (e.g., lipoproteins); usually refrigerated against friction heat; unit = Svedberg
+Centrifuge QC::Check timer and speed every 3 months (quarterly) using a stopwatch and tachometer
+RCF formula::RCF (g) = 1.118 × 10⁻⁵ × r × (RPM)²  ·  r = radius of the head in cm. Converts rpm to relative centrifugal force`},
+{e:"🌈",t:"Spectrophotometry",d:`Electromagnetic spectrum::Wave + particle properties. Short → long: cosmic < gamma < x-rays < UV < visible < infrared < microwaves < radiowaves
+Wavelength::Distance of one wave cycle (nm). Shorter = more energy and more photons. UV < 400 nm · Visible 400–700 nm · IR > 700 nm. All visible combined = white light
+Photon absorption::Atom excited 3 ways: electron to higher level, covalent bond vibration changes, or rotation changes. Unstable electron returns to ground state emitting light of a characteristic wavelength (line spectrum)
+Visible color::The wavelength transmitted (not absorbed) by an object
+Spectrum regions::<380 UV (invisible) · 380–440 violet · 440–500 blue · 500–580 green · 580–600 yellow · 600–620 orange · 620–750 red · 800–2500 near IR · 2500–15000 mid IR · 15000–1,000,000 far IR
+Color absorbed → complementary::Violet 350–430 → yellow-blue · Blue 430–475 → yellow · Green-blue 475–495 → orange · Blue-green 495–505 → red · Green 505–555 → purple · Yellow-green 555–575 → violet · Yellow 575–600 → blue · Orange 600–650 → green-blue · Red 650–700 → blue-green
+Beer-Lambert Law::Absorbance is directly proportional to concentration of the absorbing species (and path length)
+Transmittance (T)::T = I / I₀ (0 to 1); %T = 100 × I/I₀. I = transmitted intensity, I₀ = incident intensity
+Absorbance (A)::A = log₁₀(I₀/I) = −log₁₀(T). Logarithmic: A 0 = 100%T · 1 = 10% · 2 = 1% · 3 = 0.1% · 4 = 0.01% · 5 = 0.001%
+Spectrophotometer::Finds concentration of a light-absorbing analyte by measuring the light it transmits
+Components in order::Power supply → light source → entrance slit → monochromator → exit slit → cuvette → photodetector → readout
+Light source (exciter lamp)::Intense, constant, reproducible beam. Changing the lamp requires recalibration. Tungsten = visible/near IR (most common). Deuterium / mercury arc = UV. Others: hydrogen, xenon, Nernst glower, Globar, laser
+Entrance slit::Minimizes stray light. Stray light causes absorbance error and is the most common cause of lost linearity at high concentration
+Monochromator::Isolates wavelength. Photometers use glass + interference filters; spectrophotometers use diffraction gratings + prisms. Entrance slit → disperses → exit slit selects the bandpass
+Bandpass::Wavelength range (nm) where transmitted light is ≥ ½ of peak (550 & 560 nm pass 50% = 10 nm bandpass). Bandwidth should be ≤ the compound’s natural absorption bandwidth (30 nm compound → ≤ 30 nm)
+Monochromator types::Color glass filters (simple, cheap, imprecise) · Prism (glass, quartz or NaCl; can rotate) · Diffraction grating (most common; 15k–30k grooves/inch; full spectra)
+Exit slit::Lets a narrow fraction of spectrum reach the cuvette; controls bandpass. For accuracy, bandpass < ⅕ of the natural bandpass
+Cuvette (cuvet / absorption / analytical cell)::Round or square; light path must stay constant. Fused silica/quartz = UV · plastic = UV–visible · silicate glass = visible–near IR. Aluminum silica glass is most common
+Photocell (barrier-layer)::Silver-layered light-sensitive film; filter photometers; cheap, durable; temperature-sensitive, non-linear; needs no outside voltage
+Phototube::Needs outside voltage; cathode of rubidium or lithium with large surface; vacuum avoids scattering of photoelectrons
+Photomultiplier (PM) tube::Detects AND amplifies; for very low light and short flashes; electron cascade; has A/D converter
+Photodiode::Reverse-biased junction diode; photocurrent ∝ light; no internal amplification; excellent linearity, speed, small size
+Readout device::Meter showing detector’s electrical energy; chart recorder, computer printout; e.g., galvanometer/ammeter
+Single-beam vs Double-beam::Double-beam splits light: one beam through sample, one through blank/reference, correcting source variation. In space = 2 photodetectors. In time = 1 photodetector + chopper
+Wavelength accuracy::Dial wavelength = actual wavelength. Check with didymium or holmium oxide glass; mercury vapor lamps for narrow bandpass
+Stray light check::Causes: scratches and dust. Effect: absorbance error. UV range checks: NiSO₄, NaNO₂, acetone
+Linearity check::Shown by linear graph; diluted colored solutions; neutral density or dichromate solution
+Reagent blank::Reagent only, no sample; corrects absorbance from reagent color. Absorbance depends on concentration, pH and temperature`},
+{e:"✨",t:"Light-Based Techniques",d:`Atomic Absorption (AAS)::Measures light absorbed by atoms freed by heat/flame; detects metals (Al, Cu, Pb, Li, Mg, Zn). Pro: accurate, precise. Con: flame cannot free atoms of some elements
+AAS components::Hollow cathode lamp (light source, coated with the analyte) → chopper → burner head with nebulizer (ions to atoms) → monochromator → PM tube detector → readout
+Flameless AAS::Uses an electric furnace (current evaporates solvent) with tiny graphite cylinders. Con: Zeeman’s effect = spectral lines split by a magnetic field
+Flame photometry::Measures light emitted by excited ions (like flame test) for Na, K, Li: Na = yellow, K = purple/lilac, Li = red. No longer routine in CC
+Nephelometry::Measures light scattered toward a detector off the transmitted path (usually 90°); antigen-antibody complexes; based on Rayleigh’s Law (scatter ∝ number and size of particles); must be free of stray light
+Nephelometer light sources::Quartz-halogen lamp, xenon lamp, laser, helium-neon laser (633 nm)
+Turbidimetry::Measures light blocked (decrease in transmitted light) by particles; uses a spectrophotometer; for abundant larger particles and bacterial suspensions
+Luminescence types::Absorption-dependent (needs absorbed radiant energy: fluorescence, phosphorescence) vs absorption-independent (chemi- and bioluminescence)
+Fluorescence::Atoms absorb at excitation wavelength, then emit LONGER wavelength / lower energy light as electrons return to ground state. Very short lifetime (~0.0001 s). Measured by fluorometer. Energy lost by collision, heat, transfer
+Phosphorescence::Like fluorescence but with a longer delay (> 10⁻⁴ s) between absorption and emission
+Stokes effect::Difference between the maximum excitation and emitted fluorescence wavelengths
+Fluorometer light sources::Gas-discharge lamps (mercury, xenon-arc) most used · Mercury vapor: filter fluorometers, 365–366 nm · Xenon-arc: highly pressurized, good continuum
+Fluorometry pros & cons::Pros: specific; 1000× more sensitive than spectrophotometry. Cons: sensitive to pH, temperature, solvent, UV light → Quenching effect (less light fluoresces)
+Chemiluminescence::Chemical energy makes excited atoms that emit photons. No excitation radiation, no monochromator. Oxidation of luminol, acridinium ester, dioxetanes. Measured with a luminometer
+Bioluminescence::Enzyme-catalyzed light emission; e.g., luciferase oxidizing luciferin`},
+{e:"🎨",t:"Chromatography",d:`Principle::Separates solutes by differential distribution between a mobile phase (inert gas or liquid) and a stationary phase (silica gel on a sheet, or silica/polymer in a column)
+Mikhail Tswett (1903)::First described it: plant pigments separated into color bands on calcium carbonate. Named from Greek chroma (color) + graphein (to write)
+Immunochromatography::Principle of pregnancy tests: lateral flow + capillary action; Ag-Ab complexes detect hCG
+Planar chromatography::Paper (stationary phase = water/polar layer on paper fibers) · TLC (silica gel layer on glass plate or plastic/aluminum sheet) · HPTLC (TLC with small particles, 4.5 µm)
+Column chromatography::Includes gas (GC) and liquid (LC). HPLC = small-diameter particles. GC-MS and LC-MS = connected to a mass spectrometer
+Ion-exchange (IEC)::Ions swap between charged stationary groups and opposite ions in the mobile phase; mixed-bed resins (cation + anion). Used for amino acids, hemoglobin; water purification
+Adsorption::Adsorption vs desorption at solid surfaces; electrostatic, hydrogen-bonding, Van der Waals forces. HILIC = adsorption type for highly polar compounds that H-bond to a polar surface
+Partition::Distribution of solutes between two immiscible liquids; thin liquid film bonded to support particles or capillary wall
+Size exclusion::Gel filtration / gel permeation / steric exclusion / molecular sieve. Separates by size on porous inert particles; keeps physiologic salt conditions; identifies intact lipoproteins, Ag-Ab complexes, protein-ligand complexes
+Thin-layer (TLC)::For non-volatile mixtures; solvent polarity just enough to separate; moves by capillary action. Solvent too polar → solute stays with solvent front; not polar enough → solute stays at origin. Clinical use: urine drug screening
+Liquid chromatography (LC)::Solutes distribute between liquid mobile and stationary phases; HPLC is the most widely used form
+Gas chromatography (GC)::James & Martin (1952), fatty acids; separates volatile mixtures. GSC = gas-solid (adsorption). GLC = gas-liquid partition (liquid stationary phase on packing or capillary wall); used for lipid analysis
+HPLC mobile phase & elution::Solvents: acetonitrile, methanol, ethanol, isopropanol, water. Isocratic = solvent strength constant. Gradient = strength steadily increases (%/min)
+Normal vs Reversed phase::Normal: POLAR stationary, NONPOLAR mobile. Reversed: NONPOLAR stationary, POLAR mobile
+HPLC parts & detectors::Solvent reservoir, pump(s), injector, column, detector, computer. Detectors: spectrophotometer, photodiode array, fluorometer, electrochemical, mass spectrometer`},
+{e:"⚛️",t:"Mass Spectrometry",d:`Principle::Charged particles in a magnetic/electric field separate by mass-to-charge ratio. Electrons bombard sample → fragment ions. Spectrum is unique per compound (identification); ion number ∝ concentration (quantification)
+Uses::Drugs and metabolites, amino acids of proteins, steroids, proteomics, drug discovery, food contamination, pesticide residues, isotope ratio, protein ID, carbon dating
+Tandem MS::GC/MS/MS or HPLC/MS/MS: ions of a chosen m/z go to a second mass spectrometer for more fragmentation and final analysis
+Ion source::Bombards sample with ionization beam. From GC (gas): electron or chemical ionization. From HPLC (liquid): electrospray or sonic spray ionization
+Vacuum system::Prevents ions colliding with other molecules during separation
+Analyzer::Beam-type (destructive; ions pass once then hit detector; quadrupole scans m/z over time to form a spectrum) and trapping-type
+Detector & computer::Electron multipliers (discrete or continuous dynode). Computer digitizes signal and matches the spectrum to a reference library`},
+{e:"⚡",t:"Electrochemistry",d:`Polarography::Electrochemical cell with gradually increasing voltage; current measured and plotted as a polarogram. Voltage of sharp rise = characteristic of the reaction; wave height ∝ analyte concentration
+Anodic stripping voltammetry::Based on polarography; assays trace heavy metals (e.g., lead in blood). Steps: negative potential → metal ions reduced and plated on electrode (preconcentration) → electrode becomes anode, metal stripped off → current gives polarogram identifying/quantifying metal
+Potentiometry::Measures potential difference between an indicator electrode and a reference electrode (two half-cells)
+Reference electrodes::Calomel (mercury + mercurous chloride + saturated KCl) · Silver-silver chloride (Ag/AgCl), the common one. Indicator electrode = other half-cell whose potential changes with analyte concentration
+Blood gas analyzer::pH = glass electrode · PCO₂ = Severinghaus electrode · PO₂ = Clark electrode
+Ion-selective electrode (ISE)::Ion exchange across a membrane creates a potential difference reflecting the solution composition. Liquid ion-exchange membrane (inert solvent + neutral carrier); collodion membrane may separate membrane from sample
+ISE carriers::K⁺ = valinomycin · NH₄⁺ = nonactin + monactin · Na⁺ = glass membrane (SiO₂, Na₂O, Al₂O₃); do NOT dilute Na⁺ samples → pseudohyponatremia (false low sodium)
+Nernst equation::Relates ion concentration across a selective membrane to voltage (electrical potential) under non-standard conditions. More reactants → higher voltage; more products → lower voltage (closer to equilibrium)
+Amperometry::Measures current from oxidation/reduction of the analyte at an electrode held at a fixed potential
+Coulometry::Based on Faraday’s Law: equivalent weights reacted ∝ quantity of electricity. Unit = coulomb (per reviewer: 1 coulomb/minute = 1 ampere)
+Chloride coulometer::Constant DC across silver electrodes generates Ag⁺, which removes Cl⁻ as insoluble AgCl. After all chloride is gone, extra Ag⁺ raises conductivity = endpoint (measured by amperometry)`},
+{e:"🧬",t:"Electrophoresis & Hemoglobin",d:`Electrophoresis::Movement of charged molecules in a liquid medium under an electric field; separates serum, urine, CSF proteins, lipoproteins, isoenzymes
+Zone electrophoresis::Molecules separate as zones in a porous support (agarose, starch, polyacrylamide gel, cellulose acetate). Speed depends on net charge, size/shape, buffer, support, temperature, field strength
+Amphoteric / isoelectric point::Proteins can be + or − depending on buffer pH. Isoelectric point (pI) = pH where + and − charges are equal
+Serum protein electrophoresis::Buffer pH 8.6; on agarose or cellulose acetate proteins are net negative → migrate to the anode (+). Albumin fastest; gamma globulins stay near cathode
+Stains::Amido Black B, Ponceau S, Coomassie Blue = serum proteins · Silver nitrate = CSF proteins · Fat Red 7B, Oil Red O = lipoproteins · Nitrotetrazolium blue = LD isoenzymes. Densitometer quantifies bands
+Common problems::Holes in stain = analyte too concentrated · Very slow migration = voltage too low · Sample precipitates = pH too high/low or excess heat
+Isoelectric focusing::Separation by pI in polyacrylamide/agarose gel with a pH gradient made by ampholytes; proteins stop where gel pH = their pI
+Capillary electrophoresis::Based on electroosmotic flow (EOF) toward the cathode; EOF regulates how fast solutes move
+Hemoglobin structure::Tetramer: 4 globin chains, 4 heme groups, 4 iron atoms. Adults have Hb A1 and A2; infants have Hb F
+Hemoglobin types::A1 = 2α2β (90%) · A2 = 2α2δ · F = 2α2γ · Gower 1 = 2ζ2ε · Gower 2 = 2α2ε · Portland = 2ζ2γ
+Hb S and Hb C::Both are position 6 of the β chain. S = valine replaces glutamic acid. C = lysine replaces glutamic acid. Hb F is alkali resistant
+Hb migration at pH 8.6::Cellulose acetate, net negative → toward anode. Order: A1 > F > S, G, D > A2, C, O, E
+Hb migration at pH 6.2::Agar gel: C and S > A1, A2, D, E, G > F. Comparing both pH patterns separates Hbs that co-migrate`},
+{e:"📋",t:"Technique Summary",d:`Spectrophotometry measures::Light absorbance at specific wavelengths (Beer-Lambert)
+AAS measures::Light absorbed by free ground-state atoms
+Flame photometry measures::Emission intensity of excited atoms in a flame
+Nephelometry measures::Scattered light at an angle (Rayleigh’s Law)
+Turbidimetry measures::Reduction in transmitted (blocked) light from suspended particles
+Molecular emission measures::Luminescence from excited molecules returning to ground state
+Chromatography does::Separates mixture components via stationary vs mobile phases
+Mass spectrometry measures::Mass-to-charge ratio of ions
+Polarography measures::Voltage vs current
+Potentiometry measures::Potential difference between indicator and reference electrode (Nernst)
+Amperometry measures::Current from oxidation/reduction of the analyte
+Coulometry measures::Total electric charge in coulombs (Faraday’s Law)
+Electrophoresis does::Separates charged molecules moving in an electric field`},
+{e:"🤖",t:"Automation & POCT",d:`Centrifugal analysis::Centrifugal force (rotor acceleration/deceleration) moves samples and reagents into cuvets for simultaneous analysis. Advantage: batch analysis
+Discrete analysis::Each reaction in its own vessel/cuvet; syringe pipettes aspirate and dispense. Advantage: random access
+Continuous flow::Samples flow through a common pathway of tubing; air bubbles separate and clean. Disadvantage: carry-over
+Random access::Run individual tests or panels; STAT samples can jump ahead
+Batch vs Sequential vs Parallel::Batch = samples processed as a group · Sequential = tests one after another on a sample · Parallel = multiple tests at the same time
+System levels::Stand-alone = single discipline · Automated stand-alone = adds auto-repeat/auto-dilute · Modular workcell = ≥2 instruments, one discipline, one controller · Multiple platform = ≥2 disciplines · Integrated modular = ≥2 analytic modules sharing one sample/reagent system
+Throughput vs Turnaround::Throughput = max tests per hour · Turnaround = time to produce one result
+Dead volume / Carry-over::Dead volume = serum that cannot be aspirated · Carry-over = contamination by previously aspirated sample
+Reflex testing::Preliminary results decide whether more tests are ordered or cancelled (manual or automated)
+Total laboratory automation::Samples received, centrifuged, conveyed to instruments and loaded without operator help; big hospital/commercial labs
+Pneumatic tube / Bar coding::Tube = fast specimen transport · Bar codes = identify patient/sample and reagents
+Specimen handling::Robotics + fluidics copy manual tasks; level-sensing probes detect serum volume; bar-code readers (or manual position entry)
+Reagents::Dry = lyophilized powder/tablet reconstituted (Dimension®) or single-use slide (Vitros®). Liquid = pipetted by instrument
+Testing phase::Mix in cuvet (permanent quartz or disposable plastic); common temps 37°C and 30°C. Kinetic = change in absorbance over time. Endpoint = incubate, read absorbance, compare to calibrators. Gratings or filters; some use fluorometry/nephelometry
+Data management::Computer checks QC and patient values (delta check) before release; LIS archives results and QC
+Point-of-care testing::Tests near the patient for immediate results (NICU, CCU, ICU, ED). Only waived tests on POC instruments; complex tests need CLTs/CLSs. Evaluate per CLIA ’88; correlate with main lab; linearity, control ranges, reference ranges
+POC training & QC::All operators trained and documented; QC with proper standards/controls, statistics, proficiency testing, all documented`},
+{e:"💉",t:"Immunoassays",d:`Immunoassay::Detects tiny analyte (antigen) with antibody reagent forming Ag-Ab complex; label on reagent antigen or antibody. Monoclonal antibodies raise specificity
+Polyclonal vs Monoclonal::Polyclonal = many cell clones, heterogeneous mix. Monoclonal = single clone/plasma cell line, homogeneous
+Competitive-binding::Unlabeled sample antigen competes with labeled antigen for limited antibody sites. High analyte → LESS labeled antigen bound. Labeled Ag and Ab amounts stay constant
+Heterogeneous vs Homogeneous::Heterogeneous needs physical removal of free labeled antigen (RIA, ELISA, IRMA). Homogeneous does not
+Labels::Original = radioisotope (I-125 → RIA). Now: enzyme (alkaline phosphatase), fluorophore (fluorescein), chemiluminescent (acridinium ester)
+EMIT::Homogeneous. More analyte → less enzyme-labeled Ag bound. Unbound enzyme-Ag reacts with substrate → color read spectrophotometrically. More product = more analyte
+FPIA::Homogeneous. Free fluorophore-Ag rotates fast → depolarized light; bound complex rotates slowly → polarized. More analyte = LESS polarization (inverse). Used for hormones, drugs, fetal lung maturity
+Chemiluminescent immunoassay::Labels like isoluminol or acridinium ester; with H₂O₂ + catalyst isoluminol gives light at 425 nm. Signal ∝ analyte`},
+{e:"✅",t:"Quality Management",d:`QM, QA, QC::QM = whole process (method evaluation, QA, benchmarking). QA covers pre-analytic, analytic, post-analytic phases. QC = analytic phase; monitors accuracy/precision and detects analytical errors
+Method evaluation::Verifies new methods before patient results are reported; QC keeps them valid over time
+QC objectives::Check machine stability, reagent quality, technical errors
+Ideal QC material::Resembles human sample; inexpensive, stable; no communicable disease; no matrix effect; known analyte concentration; convenient packaging
+Intralaboratory QC::Internal; controls run with patient samples; daily accuracy/precision; detects random and systematic errors. At least 2 control levels every 24 h for 20 days
+Interlaboratory QC::External; proficiency testing (agencies send unknowns); long-term accuracy; difference > 2 = non-agreement
+Reference interval::Only 20 reference individuals needed if instrument and population match the package insert
+Levey-Jennings chart::Shewhart; most used; apply multiple rules without a computer
+CUSUM::Earliest sign of systematic error; needs a computer
+Youden twin plot::Compares results between labs (EQAS)
+Gaussian curve::Bell-shaped normal distribution; mean = median = mode
+Random error::By chance, any direction: pipetting, mislabeling, temperature fluctuation, poor mixing
+Systematic error::Pattern, one direction: calibration error, reagent deterioration, unstable blanks, contaminated solutions, failing instrument, changed standard. Constant = fixed size; Proportional = % of analyte
+Clerical error::Administrative; most frequent from handwritten labels and request forms
+Westgard rules::1₂S one value > ±2SD (warning) · 1₃S one > ±3SD · R₄S range between 2 levels in a run > 4SD · 2₂S two consecutive > 2SD same side · 4₁S four consecutive > 1SD · 10x ten consecutive same side of mean
+Which rule = which error::1₂S = false rejection · 1₃S, R₄S = random error · 2₂S, 4₁S, 10x = systematic error
+Shift / Trend / Outlier::Shift = values on one side of mean ~6 days → calibration error. Trend = steadily rising/falling ~6 days → reagent deterioration. Outlier = far-off value (random or systematic)
+Accuracy vs Precision::Accuracy = closeness to true value. Precision (reproducibility) = results agree with each other; expressed as CV
+Delta check::Compares a patient’s current result with their previous result
+Sensitivity vs Specificity (analytic)::Sensitivity = detects smallest concentration. Specificity = measures only the analyte of interest
+Practicability / Reliability::Practicability = easily repeated. Reliability = keeps accuracy and precision over time
+Diagnostic sens/spec::Sensitivity = detects diseased who test positive (true positive). Specificity = detects non-diseased who test negative (true negative)
+PPV / NPV::PPV = chance a positive result means disease. NPV = chance a negative result means no disease
+Error matrix::TP = disease, positive · FP = no disease, positive · TN = no disease, negative · FN = disease, negative
+Formulas::Sensitivity = TP/(TP+FN) × 100 · Specificity = TN/(TN+FP) × 100 · PPV = TP/(TP+FP) × 100 · NPV = TN/(TN+FN) × 100`},
+{e:"🧮",t:"Lab Math",d:`SI base units::Meter (m) · kilogram (kg) · second (s) · ampere (A) · kelvin (K) · mole (mol) · candela (cd)
+Derived & non-SI::Hertz (Hz) · newton (N) · °C · katal (kat). Minute 60 s · hour 3600 s · day 86400 s · liter = 1 dm³ · angstrom = 0.1 nm
+Small prefixes::atto 10⁻¹⁸ · femto 10⁻¹⁵ · pico 10⁻¹² · nano 10⁻⁹ · micro 10⁻⁶ · milli 10⁻³ · centi 10⁻² · deci 10⁻¹
+Large prefixes::deca 10¹ · hecto 10² · kilo 10³ · mega 10⁶ · giga 10⁹ · tera 10¹² · peta 10¹⁵ · exa 10¹⁸
+mg/dL → mmol/L factors::Glucose 0.0555 · BUN 0.357 · Uric acid 0.0595 · Cholesterol 0.26 · Triglycerides 0.0113 · Calcium 0.25 · Magnesium 0.417 · Phosphorus 0.323
+mEq/L factors::Ca²⁺ / Mg²⁺ × 0.5 · HCO₃⁻ / Cl⁻ / K⁺ / Na⁺ × 1
+Other SI factors::Creatinine 88.5 · Bilirubin 17.1 · Ammonia 0.588 · Iron 0.179 · Cortisol 0.0276 · T4 12.9 · T3 0.0154 · Vitamin B12 0.0738 · Folic acid 2.27 · Total protein/albumin/globulin g/dL → g/L × 10 · Enzymes IU/L → µkat/L 0.0167 · pO₂/pCO₂ mmHg → kPa 0.133
+pH & pOH::pH = −log[H⁺] = pKa + log(salt/acid) = pKw − pKb + log(base/salt) · pOH = −log[OH⁻] · pH + pOH = 14
+pKa, pKb, Ka, Kb::pKa = −log Ka · pKb = −log Kb · Ka = [salt][H⁺]/[weak acid] · Kb = [salt][OH⁻]/[weak base]
+Percent solutions::% w/w = mg/mg × 100 · % w/v = mg/mL × 100 (per 100 mL) · % v/v = mL/mL × 100
+Molarity / Molality / Normality::M = mol solute / L solution · m = mol solute / kg solvent · N = gram equivalents / L (reviewer: N = M × equivalent weight)
+mEq, mg, mol, mmol::mEq = mg/MW × valence · mg = mEq × MW / valence · mol = g/MW · mmol = mg/MW
+Milliosmoles::mOsm/L = (g/MW) × number of species × 1000
+Equilibrium constants::Kc and Kp = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ for aA + bB ⇌ cC + dD (Kp uses gases)`}
+];
+M.forEach(m=>m.c=m.d.trim().split("\n").map(l=>l.split("::")));
+const $=s=>document.querySelector(s),tot=M.reduce((a,m)=>a+m.c.length,0),sh=a=>[...a].sort(()=>Math.random()-.5);
+
+const I={},V={};
+V[2]=`<div class="vz"><h3>🌀 RCF calculator</h3><p>RCF = 1.118 × 10⁻⁵ × r × RPM² (r = radius of head in cm)</p><div class="g2"><label>Radius (cm)<input id="rr" type="number" value="10" oninput="rc()"></label><label>RPM: <b id="rn"></b><input id="rp" type="range" min="500" max="5000" step="100" value="3000" oninput="rc()"></label></div><p>Relative centrifugal force: <span class="big" id="ro"></span> g</p></div>`;
+I[2]=rc=()=>{const r=+$("#rr").value,n=+$("#rp").value;$("#rn").textContent=n;$("#ro").textContent=Math.round(1.118e-5*r*n*n)};
+V[3]=`<div class="vz"><h3>🌈 Light path, in order</h3><div class="fl"><span>💡 Light source</span>→<span>Entrance slit</span>→<span>Monochromator</span>→<span>Exit slit</span>→<span>Cuvette</span>→<span>Photodetector</span>→<span>Readout</span></div></div><div class="vz"><h3>🔦 Absorbance ↔ %Transmittance</h3><p>Slide the absorbance. A = −log₁₀(T). Higher A means less light gets through.</p><input id="sa" type="range" min="0" max="50" value="10" oninput="sp()"><p>A = <span class="big" id="sA"></span> &nbsp; %T = <span class="big" id="sT"></span></p><div class="bm"><div id="sb"></div></div><p style="color:var(--mu);font-size:13px">Remember: A 0 = 100% · A 1 = 10% · A 2 = 1% · A 3 = 0.1%</p></div>`;
+I[3]=sp=()=>{const a=$("#sa").value/10,t=100*Math.pow(10,-a);$("#sA").textContent=a.toFixed(1);$("#sT").textContent=(t>=10?t.toFixed(0):t>=1?t.toFixed(1):t.toFixed(3))+"%";$("#sb").style.width=Math.max(t,1)+"%"};
+V[8]=`<div class="vz"><h3>🧬 Serum protein gel (pH 8.6)</h3><p>Proteins are negative, so they run toward the anode (+). Albumin runs fastest; gamma globulins stay near the cathode.</p><div class="ax"><span>Cathode (−)</span><span>Anode (+)</span></div><div class="gel"><i style="left:3%">γ</i><i style="left:22%">β</i><i style="left:41%">α2</i><i style="left:60%">α1</i><i style="left:81%">Alb</i></div></div>`;
+V[12]=`<div class="vz"><h3>📈 Levey-Jennings chart</h3><p>Pick a pattern to see which error it shows.</p><div class="row" style="margin:0 0 6px"><button class="sm" onclick="lj(0)">Shift</button><button class="sm" onclick="lj(1)">Trend</button><button class="sm" onclick="lj(2)">Outlier</button></div><svg id="ljs" viewBox="0 0 320 150" style="width:100%"></svg><p id="ljt"></p></div><div class="vz"><h3>🧪 Sensitivity & specificity</h3><div class="g2"><label>TP<input id="a1" type="number" value="90" oninput="ss()"></label><label>FP<input id="a2" type="number" value="10" oninput="ss()"></label><label>FN<input id="a3" type="number" value="5" oninput="ss()"></label><label>TN<input id="a4" type="number" value="95" oninput="ss()"></label></div><p id="sso"></p></div>`;
+const LJD=[[[.2,-.3,.1,1.2,1.4,1.1,1.3,1.5,1.2,1.4,1.3,1.1],"Shift: values stay on one side of the mean (about 6 days) → calibration error (systematic)."],[[0,.2,.4,.6,.9,1.1,1.4,1.6,1.9,2.1,2.4,2.6],"Trend: values keep rising or falling across the mean (about 6 days) → reagent deterioration (systematic)."],[[.1,-.4,.3,3.3,-.2,.5,-.3,.2,-.5,.1,.3,-.1],"Outlier: one wild value (breaks 1₃S) → random error."]];
+function lj(k){const[d,t]=LJD[k];let h="";[-3,-2,-1,0,1,2,3].forEach(n=>{const y=75-n*20;h+=`<line x1="30" x2="315" y1="${y}" y2="${y}" stroke="${n==0?"#c2457a":"#e8b9cd"}" stroke-dasharray="${n?"4 3":"0"}"/><text x="2" y="${y+4}" font-size="10" fill="#8a7380">${n?(n>0?"+":"")+n+"SD":"mean"}</text>`});
+h+=`<polyline fill="none" stroke="#c2457a" stroke-width="2" points="${d.map((v,i)=>(40+i*24)+","+(75-v*20)).join(" ")}"/>`+d.map((v,i)=>`<circle cx="${40+i*24}" cy="${75-v*20}" r="4" fill="${Math.abs(v)>2?"#d6455d":"#c2457a"}"/>`).join("");$("#ljs").innerHTML=h;$("#ljt").textContent=t}
+function ss(){const[a,b,c,d]=[1,2,3,4].map(i=>+$("#a"+i).value),f=(x,y)=>y?(100*x/y).toFixed(1)+"%":"–";$("#sso").innerHTML=`Sensitivity = TP/(TP+FN) = <b>${f(a,a+c)}</b><br>Specificity = TN/(TN+FP) = <b>${f(d,d+b)}</b><br>PPV = TP/(TP+FP) = <b>${f(a,a+b)}</b><br>NPV = TN/(TN+FN) = <b>${f(d,d+c)}</b>`}
+I[12]=()=>{lj(0);ss()};
+const CF=[["Glucose",.0555,"mmol/L"],["BUN",.357,"mmol/L"],["Uric acid",.0595,"mmol/L"],["Cholesterol",.26,"mmol/L"],["Triglycerides",.0113,"mmol/L"],["Calcium",.25,"mmol/L"],["Magnesium",.417,"mmol/L"],["Phosphorus",.323,"mmol/L"],["Creatinine",88.5,"µmol/L"],["Bilirubin",17.1,"µmol/L"]];
+V[13]=`<div class="vz"><h3>🧮 mg/dL → SI converter</h3><div class="g2"><select id="cs" onchange="cv()">${CF.map((c,i)=>`<option value="${i}">${c[0]} (×${c[1]})</option>`).join("")}</select><input id="cn" type="number" value="100" oninput="cv()"></div><p><span class="big" id="co"></span></p></div>`;
+I[13]=cv=()=>{const c=CF[$("#cs").value];$("#co").textContent=($("#cn").value*c[1]).toFixed(2)+" "+c[2]};
+let cur=0,seen=new Set(),qz=null;
+function tp(){sv();const p=Math.round(seen.size/tot*100);$("#bar").style.width=p+"%";$("#pc").textContent=p+"% reviewed · follow the flowers 🌸 in order";
+$("#nav").innerHTML=M.map((m,i)=>`<button class="${i==cur&&!qz?"on":""} ${m.c.every((_,j)=>seen.has(i+"-"+j))?"dn":""}" onclick="go(${i})" title="${m.t}">${m.e}${TS[i].run?"<sup>⏱</sup>":TS[i].done?"<sup>⏰</sup>":""}</button>`).join("")+`<button class="${qz&&qz.all?"on":""}" onclick="quiz(-1)" title="Final quiz">🎀</button>`}
+function go(i){qz=null;cur=i;view();scrollTo(0,0)}
+function view(){const m=M[cur];$("#main").innerHTML=`<p class="st">Step ${cur+1} of ${M.length}</p><h2>${m.e} ${m.t}</h2><p class="hint">Read the big idea first, play with the visual (if there is one), tap each card to reveal the answer, then take the quick quiz and move on.</p>${tpn()}${bi()}${V[cur]||""}<button class="sm" onclick="rev()">Reveal all</button>${m.c.map((c,j)=>`<div class="cd ${seen.has(cur+"-"+j)?"open":""}" onclick="flip(${j},this)"><b>${c[0]}</b><p>${c[1]}</p></div>`).join("")}<div class="row">${cur?`<button class="sm" onclick="go(${cur-1})">← Back</button>`:""}<button onclick="quiz(${cur})">Quick quiz 🌸</button>${cur<M.length-1?`<button onclick="go(${cur+1})">Next →</button>`:`<button onclick="quiz(-1)">Final quiz 🎀</button>`}</div>`;tp();tm();I[cur]&&I[cur]()}
+function flip(j,el){el.classList.toggle("open");seen.add(cur+"-"+j);tp()}
+function rev(){M[cur].c.forEach((_,j)=>seen.add(cur+"-"+j));view()}
+function quiz(i){const pool=i<0?M.flatMap(m=>m.c):M[i].c;const qs=sh(pool).slice(0,i<0?15:6).map(c=>({q:c[1],a:c[0],o:sh([c[0],...sh(pool.filter(x=>x[0]!=c[0])).slice(0,3).map(x=>x[0])])}));qz={qs:wq(i,qs),n:0,s:0,all:i<0,i,p:null};qv();scrollTo(0,0)}
+function qv(){const z=qz;tp();if(z.n>=z.qs.length){const r=z.s/z.qs.length;$("#main").innerHTML=`<h2>${r>.8?"🎉":"💪"} ${z.s} / ${z.qs.length}</h2><p>${r>.8?"Amazing! You really know this.":"Good effort! Flip through the cards again and retry."}</p><div class="row"><button onclick="quiz(${z.i})">Try again</button><button class="sm" onclick="go(${z.all?0:z.i})">Back to cards</button>${!z.all&&z.i<M.length-1?`<button onclick="go(${z.i+1})">Next topic →</button>`:""}</div>`;return}
+const q=z.qs[z.n];$("#main").innerHTML=`<p class="st">${z.all?"Final quiz 🎀":M[z.i].t} · Question ${z.n+1} of ${z.qs.length}</p><div class="q"><b>${q.w?"Think it through 🤔":"Which term matches this?"}</b><p>${q.q}</p>${q.o.map((o,k)=>`<button class="o ${z.p===null?"":o==q.a?"ok":k==z.p?"no":""}" onclick="pick(${k})">${o}</button>`).join("")}</div>${z.p!==null&&q.w?`<div class="wy"><b>Why:</b> ${q.w}</div>`:""}${z.p!==null?`<div class="row"><button onclick="qz.n++;qz.p=null;qv()">${z.n+1<z.qs.length?"Next →":"See score"}</button></div>`:""}`}
+function pick(k){if(qz.p!==null)return;qz.p=k;if(qz.qs[qz.n].o[k]==qz.qs[qz.n].a)qz.s++;qv()}
+const BI=[
+["Everything downstream is only as trustworthy as what goes in. Purer grade = fewer hidden contaminants faking or hiding a result, so pick the grade by the job: analytic or ultrapure for real assays, never technical grade. Water follows the same logic: Type I for exact work, II for reagents, III for rough jobs and washing. A primary standard is the ruler you trust directly; a secondary standard is a copy checked against it.","Type I = Important work, II = Everyday reagents, III = washing only."],
+["Choose glass by what it must survive: heat (borosilicate), strong chemicals (soft glass), or light (low actinic, for bilirubin). For pipettes, the more exact the job, the less flexible the tool: a volumetric pipette delivers ONE volume with the best accuracy, while graduated ones (Mohr, serologic) trade accuracy for choice. Blow-out means the last drop counts as part of the volume.","Etched ring near the mouth = blow it out (serologic, Ostwald-Folin). Mohr and volumetric just drain."],
+["Spinning makes a much stronger “fake gravity” called RCF. It grows with the SQUARE of the speed and with the radius, which is why labs quote g instead of rpm: the same rpm gives different force on different rotors. Angle-head rotors spin faster with less heat; ultracentrifuges are chilled because friction at those speeds creates heat.","Double the rpm → four times the force (RPM²)."],
+["Light goes in, the sample “eats” some, and the detector counts what’s left. More analyte means more light eaten, so higher absorbance (Beer-Lambert). Absorbance is logarithmic: every +1 A means 10× less light (A 1 = 10%T, A 2 = 1%T). A solution looks like the colour it does NOT absorb. Stray light is the villain: it reaches the detector without touching the sample, so strong samples look less absorbing and the line bends.","Light path: Little Sally Makes Smart Choices During Review = Lamp, Slit, Monochromator, Slit, Cuvette, Detector, Readout."],
+["These all ask one question: what did the light do after meeting the sample? Absorbed by atoms in a flame = AAS. Emitted by excited atoms = flame photometry. Scattered sideways = nephelometry. Blocked straight ahead = turbidimetry. Re-emitted at a longer wavelength after losing some energy = fluorescence (the gap is the Stokes effect). Made by a chemical reaction with no lamp at all = chemiluminescence.","Nephelometry = Near the side (90° scatter). Turbidimetry = what gets Through is reduced."],
+["Picture a race where runners differ in how sticky the track is for them. The mobile phase carries the mixture along; the stationary phase holds back whatever it likes more, so different stickiness means different speeds, which means separation. Each type is just a different kind of stickiness: charge (ion-exchange), surface grip (adsorption), solubility in two liquids (partition), or size (size exclusion).","TLC: solvent too polar → solute rides the front; not polar enough → it stays at the origin. Reversed-phase flips normal-phase."],
+["A mass spectrometer weighs molecules using charge. It ionizes the sample, sends the ions through a magnetic or electric field, and sorts them by mass-to-charge ratio (m/z). The fragment pattern is a fingerprint (identification) and the signal size tells how much (quantification). Vacuum keeps ions from bumping into air. GC or HPLC goes first to separate the mixture, and tandem MS adds a second filter.","Chromatography separates, MS identifies. Together: GC-MS, LC-MS."],
+["Every technique here turns chemistry into electricity; the difference is what you hold fixed and what you read. Potentiometry reads voltage (pH, ISE). Amperometry holds voltage and reads current (PO₂, Clark). Polarography ramps the voltage and reads current. Coulometry counts total charge (chloride with Ag⁺). An ISE membrane is like a bouncer with a guest list: only one ion gets through.","Potentio = Potential (V). Ampero = Amps. Coulo = Coulombs. Clark = O₂, Severinghaus = CO₂."],
+["Charged molecules move in an electric field toward the opposite pole. At pH 8.6 serum proteins are all net negative, so they run toward the anode (+): albumin fastest, gamma globulins barely leave the cathode side. A protein’s charge depends on pH; at its isoelectric point (pI) the net charge is zero and it stops, which is the idea behind isoelectric focusing. Hb S and C differ by one amino acid at β6, which changes charge, so they run in different spots.","Albumin → Anode. Order from the anode: Alb, α1, α2, β, γ."],
+["Sort the techniques by what they read: light (spectro, AAS, flame, neph, turbidimetry, fluorometry), electricity (potentio, amper, coulo, polaro), separation (chromatography, electrophoresis), or mass-to-charge (MS). When a question hands you the measured quantity, work backwards to the technique.","Absorbance → spectro. Scattered light → neph. Potential difference → potentio. Current → amper. Coulombs → coulo. m/z → MS."],
+["Automation is a set of trade-offs between speed, flexibility and cleanliness. Continuous flow is simple but samples can contaminate each other (carry-over). Discrete analysis gives each sample its own vessel, so any test in any order (random access). Centrifugal analysis spins everything at once, which suits batches. POCT brings testing to the bedside for speed, so it must still follow the rules: waived tests, trained operators, QC, and correlation with the main lab.","Throughput = tests per hour. Turnaround = time for ONE result."],
+["Competition logic: sample antigen and labeled antigen fight for a limited number of antibody seats. More analyte in the sample takes more seats, so less labeled antigen binds. Then ask which signal you read. EMIT: only free enzyme-labeled antigen works, so more analyte = more colour. FPIA: bound label spins slowly (polarized), free label spins fast (depolarized), so more analyte = LESS polarization.","High analyte → low bound label. EMIT rises with analyte; FPIA falls."],
+["QC asks one daily question: is the method still behaving like it did when we validated it? Random error scatters results unpredictably (hurts precision); systematic error pushes them one way (hurts accuracy). Westgard rules are tripwires: 1₃S and R₄S catch a single wild point or range (random); 2₂S, 4₁S and 10x need several points in a row, which shows a steady push (systematic). A shift suggests a calibration change; a trend suggests reagent deterioration.","Many points in a row → systematic. One huge point → random. Sensitivity looks at the sick, specificity at the healthy."],
+["Lab math is mostly three moves. (1) Move units by prefix (mg → g is ÷1000). (2) Convert between amount and concentration: mol = g ÷ MW, M = mol ÷ L, mEq = mg ÷ MW × valence. (3) Convert conventional to SI by multiplying by the factor (glucose mg/dL × 0.0555 = mmol/L) and divide to go back. Estimate first: if your answer is 1000× off, a prefix slipped.","Conventional → SI: multiply. SI → conventional: divide."]
+];
+const W=[
+[["A tech must prepare a reagent for a routine assay. What is the minimum acceptable water?","Type II",["Type III","Tap water","Type I only"],"Type II is acceptable for reagent prep. Type III is for rough qualitative tests, washing glassware and as source water. Tap water is never suitable."]],
+[["Which pipette delivers one fixed volume with the greatest accuracy?","Volumetric pipette",["Mohr pipette","Serologic pipette","Pasteur pipette"],"It is built for one volume only (TD, self-draining). Graduated pipettes trade accuracy for flexibility, and Pasteur has no calibration mark."]],
+[["Same rotor, but the speed is doubled. What happens to RCF?","It becomes 4× larger",["It doubles","It stays the same","It becomes 8× larger"],"RCF depends on RPM², so 2² = 4."],["Radius 10 cm at 3,000 rpm. RCF is closest to…","≈ 1,006 g",["≈ 335 g","≈ 3,000 g","≈ 10,060 g"],"1.118×10⁻⁵ × 10 × 3,000² = 1.118×10⁻⁵ × 10 × 9,000,000 ≈ 1,006 g."]],
+[["A reading is A = 2. What is the %T?","1%",["10%","0.1%","20%"],"T = 10⁻ᴬ, so A 1 = 10%, A 2 = 1%, A 3 = 0.1%. Each +1 A means 10× less light."],["A very concentrated standard reads lower than expected and the calibration curve flattens. Likely cause?","Stray light",["Wrong lamp colour","Cuvette too clean","A narrower bandpass"],"Stray light reaches the detector without passing through the sample, so high-absorbance samples look more transparent. It is the most common cause of lost linearity."],["A solution absorbs blue light (430–475 nm). What colour does it look?","Yellow",["Blue","Red","Green"],"Visible colour is the light transmitted, not absorbed. Blue absorbed → complementary yellow."]],
+[["In fluorescence the emitted light has a longer wavelength than the exciting light. Why?","Some energy is lost before emission",["Extra energy is gained","The sample absorbs a second photon","The detector shifts the colour"],"Excited electrons lose some energy (collision, heat) before returning to ground state, so emission has lower energy and longer wavelength. The gap is the Stokes effect."]],
+[["In TLC a solute travels with the solvent front and doesn’t separate. What’s wrong?","The solvent is too polar for it",["The solvent isn’t polar enough","The plate is too thin","The sample is volatile"],"Too polar: the solute prefers moving with the solvent. Not polar enough: it stays at the origin."]],
+[["Why does a mass spectrometer work under vacuum?","Ions must not collide with other molecules during separation",["To keep the sample cold","To raise the ion charge","To dissolve the sample"],"Collisions would scatter or neutralize the ions and ruin the m/z separation."]],
+[["Serum sodium is run on an ISE, but the sample was diluted first. Result?","Falsely low (pseudohyponatremia)",["Falsely high","No change","Falsely high potassium"],"Per your notes, diluted samples cause pseudohyponatremia, so Na⁺ samples should not be diluted."],["A method reads voltage between two electrodes. Which is it?","Potentiometry",["Amperometry","Coulometry","Polarography"],"Potentio = potential. Amperometry reads current at fixed voltage, polarography reads current while the voltage ramps, coulometry counts charge."]],
+[["A protein stops moving in a pH gradient gel at pH 6.2. What is that pH?","Its isoelectric point (pI)",["The buffer pH","Its maximum charge","Its molecular weight"],"At the pI the positive and negative charges are equal, so there is no net pull. That is isoelectric focusing."],["Two hemoglobins co-migrate on cellulose acetate at pH 8.6. How do you separate them?","Run agar gel at pH 6.2 and compare",["Run pH 8.6 again","Use a bigger sample","Stain with Oil Red O"],"Changing pH and medium changes the relative mobilities, so look-alikes separate. Oil Red O stains lipoproteins."]],
+[["Which pairing is correct?","Nephelometry – Rayleigh’s Law",["Spectrophotometry – Nernst equation","Potentiometry – Beer-Lambert Law","Coulometry – Rayleigh’s Law"],"Spectro–Beer-Lambert, potentio–Nernst, neph–Rayleigh, coulo–Faraday."]],
+[["STAT samples must jump the queue, and only ordered tests should run. Which approach fits?","Discrete analysis (random access)",["Continuous flow","Centrifugal analysis","Batch analysis"],"Each reaction sits in its own vessel, so any test can run in any order. Continuous flow risks carry-over and centrifugal suits batches."]],
+[["In a competitive immunoassay the patient has a very HIGH analyte level. What happens to labeled antigen bound to antibody?","Less of it binds",["More of it binds","It stays the same","It is destroyed"],"Antibody seats are limited. Lots of unlabeled analyte takes them, leaving labeled antigen free."],["In FPIA the analyte is high. What does the detector see?","Less polarized light",["More polarized light","No light at all","A longer wavelength"],"More analyte → less bound label → more free, fast-spinning label → depolarized light. The relationship is inverse."]],
+[["Control values rise steadily for six days, crossing the mean. Most likely cause?","Reagent deterioration (trend)",["Calibration error (shift)","Pipetting error (random)","Clerical error"],"A gradual drift is a trend and points to reagent deterioration. A sudden move to one side is a shift and points to calibration."],["One control is 3.4 SD above the mean; the other level is fine. Rule and error type?","1₃S: random error",["2₂S: systematic error","10x: systematic error","4₁S: systematic error"],"A single wild value breaks 1₃S. Rules needing several points in a row signal systematic error."],["90 of 100 people with a disease test positive. This is the…","Sensitivity (90%)",["Specificity (90%)","PPV (90%)","NPV (90%)"],"Sensitivity = TP ÷ (TP+FN), looking only at people who truly have the disease."]],
+[["Glucose is 100 mg/dL. In mmol/L?","5.55 mmol/L",["0.555 mmol/L","55.5 mmol/L","1,800 mmol/L"],"100 × 0.0555 = 5.55."],["How many mmol is 5.85 g of NaCl (MW 58.5)?","100 mmol",["10 mmol","1 mmol","1,000 mmol"],"5.85 ÷ 58.5 = 0.1 mol = 100 mmol."],["40 mg of calcium (MW 40, valence 2) equals how many mEq?","2 mEq",["1 mEq","20 mEq","80 mEq"],"mEq = mg ÷ MW × valence = 40 ÷ 40 × 2 = 2."]]
+];
+const wb=w=>({q:w[0],a:w[1],o:sh([w[1],...w[2]]),w:w[3]});
+const wq=(i,qs)=>i<0?sh([...qs,...sh(W.flat()).slice(0,6).map(wb)]):[...(W[i]||[]).map(wb),...qs];
+const bi=()=>{const b=BI[cur];return `<div class="bi"><b>💡 The big idea</b><p>${b[0]}</p><p><b>🧠 Trick:</b> ${b[1]}</p></div>`};
+const T0=document.title,TS=M.map(m=>{const x=Math.max(3,Math.ceil(m.c.length/3));return{m:x,left:x*60,run:0,end:0,done:0}});let ac;
+const tpn=()=>`<div class="vz"><h3>⏱ Timer for this topic</h3><div class="g2"><label>Minutes<input id="tmin" type="number" min="1" max="180" value="${TS[cur].m}" oninput="ts(this.value)"></label><div style="text-align:center"><span class="big" id="tdis"></span></div></div><div class="bm" style="margin:8px 0"><div id="tbar"></div></div><div class="row" style="margin-top:4px"><button class="sm" id="tgb" onclick="tg()"></button><button class="sm" onclick="tr0()">Reset</button></div><div class="g2"><label>Or split my total study time (min)<input id="tt" type="number" min="10" placeholder="e.g. 90"></label><div style="align-self:end"><button class="sm" onclick="plan()">Plan all topics</button></div></div></div>`;
+function sv(){try{localStorage.setItem("ccsb",JSON.stringify({s:[...seen],m:TS.map(t=>t.m)}))}catch(e){}}
+function ld(){try{const d=JSON.parse(localStorage.getItem("ccsb")||"null");if(d){d.s.forEach(x=>seen.add(x));d.m.forEach((v,i)=>{if(TS[i]&&v>0){TS[i].m=v;TS[i].left=v*60}})}}catch(e){}}
+const fm=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+function tm(){const t=TS[cur],d=$("#tdis");if(!d)return;d.textContent=fm(t.left);d.className="big"+(t.run&&t.left<=60?" tl":"");$("#tbar").style.width=100*t.left/(t.m*60)+"%";$("#tgb").textContent=t.run?"⏸ Pause":t.done?"↺ Restart":t.left<t.m*60?"▶ Resume":"▶ Start"}
+function ts(v){const t=TS[cur];t.m=Math.min(180,Math.max(1,+v||1));if(!t.run){t.left=t.m*60;t.done=0}tm();sv()}
+function tg(){const t=TS[cur];try{ac=ac||new(window.AudioContext||window.webkitAudioContext)()}catch(e){}if(t.run){t.left=Math.max(0,Math.ceil((t.end-Date.now())/1000));t.run=0}else{if(t.left<=0||t.done){t.left=t.m*60;t.done=0}t.end=Date.now()+t.left*1000;t.run=1;dm()}tm();tp()}
+function tr0(){const t=TS[cur];t.run=0;t.done=0;t.left=t.m*60;tm();tp()}
+function plan(){const T=+$("#tt").value;if(!(T>0))return;const n=M.reduce((a,m)=>a+m.c.length,0);TS.forEach((t,i)=>{if(!t.run){t.m=Math.max(2,Math.round(T*M[i].c.length/n));t.left=t.m*60;t.done=0}});$("#tmin").value=TS[cur].m;tm();sv();tp()}
+function dm(){$("#tu").style.display="none";document.title=T0}
+function bz(){try{ac.resume();[0,.35,.7].forEach(d=>{const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=880;g.gain.value=.15;o.connect(g);g.connect(ac.destination);o.start(ac.currentTime+d);o.stop(ac.currentTime+d+.2)})}catch(e){}try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}}
+function al(i){bz();document.title="⏰ Time’s up!";const e=$("#tu");e.innerHTML=`<b>⏰ Time’s up: ${M[i].e} ${M[i].t}</b><p style="margin:4px 0 0;font-size:15px">Finish the card you’re on, then take the quiz or move on.</p><div class="row"><button onclick="go(${i});quiz(${i});dm()">Quiz me 🌸</button>${i<M.length-1?`<button onclick="go(${i+1});dm()">Next topic →</button>`:""}<button class="sm" onclick="ex(${i})">+3 min</button><button class="sm" onclick="dm()">Dismiss</button></div>`;e.style.display="block"}
+function ex(i){const t=TS[i];t.left=180;t.end=Date.now()+18e4;t.run=1;t.done=0;dm();tm();tp()}
+setInterval(()=>{let c=0;TS.forEach((t,i)=>{if(t.run){t.left=Math.max(0,Math.ceil((t.end-Date.now())/1000));if(!t.left){t.run=0;t.done=1;c=1;al(i)}}});tm();if(c)tp()},500);
+ld();view();
+</script></body></html>
